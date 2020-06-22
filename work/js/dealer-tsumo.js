@@ -26,5 +26,15 @@ function getHu(){
             totalHu += parseInt(agariCheck[i].value,10)
         }
     }
+
+    const minko_common = document.minko_common;
+    if(minko_common.value.match(/\D/)){
+        alert('半角数字を入力してください');
+    }
+    const minko_common_num = parseInt(minko_common.value,10);
+    minko_common_num *= 2;
+    console.log(minko_common);
+
+
     console.log(totalHu);
 }
