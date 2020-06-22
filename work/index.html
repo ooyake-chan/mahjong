@@ -10,16 +10,103 @@
     <header></header>
     <div class="wrapper">
         <div class="container hand">
-            役
+            <form name="hand_form">
+                <p>１飜役</p>
+                <input type="checkbox" name="hand" value="1">面前自摸</br>
+                <input type="checkbox" name="hand" value="1">断么</br>
+                <input type="checkbox" name="hand" value="1">平和</br>
+                <input type="checkbox" name="hand" value="1">リーチ</br>
+                <p>２飜役</p>
+                <input type="checkbox" name="hand" value="2">三色同順</br>
+                <input type="checkbox" name="hand" value="2">チャンタ</br>
+                <input type="checkbox" name="hand" value="2">三暗刻</br>
+                <input type="button" value="click" onclick="handTest();">
+            </form>
         </div>
-        <div class="container hu">
-            符
+        <div class="container">
+            <div class="hu hu-tei">
+                <p>副底<span>+20符</span></p>
+            </div>
+            <div class="hu agari">
+                <input type="checkbox" name="agari" value="10">面前ロン<span>+10符</span></br>
+                <input type="checkbox" name="agari" value="2">自摸<span>+2符</span></br>
+            </div>
+            <div class="hu mentsu">
+                <p>刻子（同じ牌３つの面子）がある</p>
+                <button>ある</button><button>ない</button>
+                <p>あると答えた場合</p>
+                <p>明刻（鳴いて揃えた刻子）</p>
+                <p>中張牌<input type="text" name="minko-common">個</p>
+                <p>么九牌<input type="text" name="minko-rare">個</p>
+                <p>暗刻（鳴かずに揃えた刻子）</p>
+                <p>中張牌<input type="text" name="anko-common">個</p>
+                <p>么九牌<input type="text" name="anko-rare">個</p>
+            </div>
+            <div class="hu kantsu">
+                <p>槓子（同じ牌４つの面子）がある</p>
+                <button>ある</button><button>ない</button>
+                <p>あると答えた場合</p>
+                <p>明槓（鳴いて揃えた槓子）</p>
+                <p>中張牌<input type="text" name="minkan-common">個</p>
+                <p>么九牌<input type="text" name="minkan-rare">個</p>
+                <p>暗槓（鳴かずに揃えた槓子）</p>
+                <p>中張牌<input type="text" name="ankan-common">個</p>
+                <p>么九牌<input type="text" name="ankan-rare">個</p>
+            </div>
+            <div class="hu atama">
+                <p>雀頭（アタマ）の牌が</p>
+                <form name="atama-form">
+                    <label>
+                        <input type="radio" name="atama" value="2">三元牌
+                    </label>
+                    <label>
+                        <input type="radio" name="atama" value="2">自風
+                    </label>
+                    <label>
+                        <input type="radio" name="atama" value="2">場風
+                    </label>
+                    <label>
+                        <input type="radio" name="atama" value="4">連風牌
+                    </label>
+                    <label>
+                        <input type="radio" name="atama" value="0">どれでもない
+                    </label>
+            </form>
+            </div>
+            <div class="hu mati">
+                <p>待ちの形が</p>
+                <form name="mati-form">
+                    <label>
+                        <input type="radio" name="mati" value="0">両面待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="0">シャボ待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="2">辺張待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="2">嵌張待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="2">単騎待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="2">ノベタン待ち
+                    </label></br>
+                </form>              
+            </div>
         </div>
         <div class="container total">
             トータル
+            <p><span id="hu"></span>符<span id="hand"></span>飜</p>
+            <p><span id="result"></span>点</p>
+            <p><span id="payment-non-dealer"></span>子の支払い</p>
+            <p><span id="payment-dealer"></span>親の支払い</p>
         </div>
     </div>
 
     <footer></footer>
+    <script src="js/dealer-tsumo.js"></script>
 </body>
 </html>

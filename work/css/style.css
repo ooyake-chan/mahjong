@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  width: 500px;
+  padding: 10px;
+  margin: 30px auto;
+  background-color: #eaeaea;
+}
+
+.wrapper .container {
+  flex: auto;
+  padding: 5px;
+  margin: 10px;
+  background-color: #fff;
+}
+
+.hu {
+  padding: 5px;
+  margin: 5px;
+}
+
+.hu-tei {
+  background-color: pink;
+}
+
+.agari {
+  background-color: #f0e68c;
+}
+
+.mentsu {
+  background-color: lightsalmon;
+}
+
+.kantsu {
+  background-color: darkseagreen;
+}
+
+.atama {
+  background-color: #90ee90;
+}
+
+.mati {
+  background-color: skyblue;
+}
+/*# sourceMappingURL=style.css.map */
