@@ -28,8 +28,10 @@
                 <p>副底<span>+20符</span></p>
             </div>
             <div class="hu agari">
-                <input type="checkbox" name="agari" value="10">面前ロン<span>+10符</span></br>
-                <input type="checkbox" name="agari" value="2">自摸<span>+2符</span></br>
+                <form name="agari_form">
+                    <input type="radio" name="agari" value="10">面前ロン<span>+10符</span></br>
+                    <input type="radio" name="agari" value="2">自摸<span>+2符</span></br>
+                </form>
             </div>
             <div class="hu mentsu">
                 <p>刻子（同じ牌３つの面子）がある</p>
@@ -47,11 +49,39 @@
                 <button>ある</button><button>ない</button>
                 <p>あると答えた場合</p>
                 <p>明槓（鳴いて揃えた槓子）</p>
-                <p>中張牌<input type="text" name="minkan-common">個</p>
-                <p>么九牌<input type="text" name="minkan-rare">個</p>
-                <p>暗槓（鳴かずに揃えた槓子）</p>
-                <p>中張牌<input type="text" name="ankan-common">個</p>
-                <p>么九牌<input type="text" name="ankan-rare">個</p>
+                <label>中張牌
+                    <select name="kantsu_chunchan" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </label>
+                <label>么九牌
+                    <select name="kantsu_yaochu" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </label>    
+                    <p>暗槓（鳴かずに揃えた槓子）</p>
+                    <label>中張牌
+                        <select name="ankan_chunchan" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </label>
+                    <label>么九牌
+                        <select name="ankan_yaochu" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </label>    
             </div>
             <div class="hu atama">
                 <p>雀頭（アタマ）の牌が</p>
@@ -104,6 +134,7 @@
                 <p><span id="result"></span>点</p>
                 <p><span id="payment_non_dealer"></span>子の支払い</p>
                 <p><span id="payment_dealer"></span>親の支払い</p>
+                <button onclick="getHu();">符を計算</button>
             </div>
 
     <footer></footer>
