@@ -1,10 +1,18 @@
-// 飜を取得
-function handTest(){
-    let flag = false;
-    for(let i = 0 ; i < document.hand_form.elements.length -1; i++){
-        if(document.hand_form.elements[i].checked){
-            flag=true;
-            alert(`${document.hand_form.elements[i].value}が選択されました`);
+hu=document.getElementById('hu');
+hand=document.getElementById('hand');
+result=document.getElementById('result');
+payment_non_dealer=document.getElementById('payment_non_dealer');
+payment_dealer=document.getElementById('payment_dealer');
+
+// 飜を取得して表示
+function getHan(){
+    const handCheck = document.hand_form.hand;
+    let totalHan = 0;
+    for(i = 0 ; i<handCheck.length; i++){
+        if(handCheck[i].checked){
+            totalHan += parseInt(handCheck[i].value,10);
         }
     }
+    console.log(totalHan);
+    hand.innerHTML=`${totalHan}`;
 }

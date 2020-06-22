@@ -20,7 +20,7 @@
                 <input type="checkbox" name="hand" value="2">三色同順</br>
                 <input type="checkbox" name="hand" value="2">チャンタ</br>
                 <input type="checkbox" name="hand" value="2">三暗刻</br>
-                <input type="button" value="click" onclick="handTest();">
+                <input type="button" value="click" onclick="getHan();">
             </form>
         </div>
         <div class="container">
@@ -97,14 +97,14 @@
                 </form>              
             </div>
         </div>
-        <div class="container total">
-            トータル
-            <p><span id="hu"></span>符<span id="hand"></span>飜</p>
-            <p><span id="result"></span>点</p>
-            <p><span id="payment-non-dealer"></span>子の支払い</p>
-            <p><span id="payment-dealer"></span>親の支払い</p>
-        </div>
     </div>
+            <div class="container total">
+                トータル
+                <p><span id="hu"></span>符<span id="hand"></span>飜</p>
+                <p><span id="result"></span>点</p>
+                <p><span id="payment_non_dealer"></span>子の支払い</p>
+                <p><span id="payment_dealer"></span>親の支払い</p>
+            </div>
 
     <footer></footer>
     <script src="js/dealer-tsumo.js"></script>
