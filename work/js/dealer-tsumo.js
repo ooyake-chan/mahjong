@@ -17,12 +17,15 @@ function getHan(){
     hand.innerHTML=`${totalHan}`;
 }
 //符の計算
-let totalHu = 0;
+let totalHu = 20;
 
+// 上がりの点数
+let agariTotal = 0;
 function getAgari(val){
-    alert(val);
-    totalHu += parseInt(val,10);
+    agariTotal+= parseInt(val,10);
 }
+
+// 刻子の点数
 function getKotsu(){
     let kotsuTotal = 0;
     let minko_common = document.kotsu.minko_common;
@@ -44,11 +47,11 @@ function getKotsu(){
     anko_rare = parseInt(anko_rare.value,10);
     anko_rare *=8;
     kotsuTotal +=  anko_rare;
-    
-    alert(kotsuTotal);
+ 
     return  kotsuTotal;
 }
 
+// 槓子の点数
 function getKantsu(){
     let kantsuTotal = 0;
     let minkan_common = document.kantsu.minkan_common;
@@ -71,12 +74,42 @@ function getKantsu(){
     ankan_rare *=32;
     kantsuTotal +=  ankan_rare;
 
-    alert(kantsuTotal);
     return kantsuTotal;
 }
 
+// 雀頭の点数
+let atamaTotal = 0;
+function getAtama(val){
+    atamaTotal += parseInt(val,10);
+}
+
+// 待ちの形の点数
+let matiTotal = 0;
+function getMati(val){
+    matiTotal += parseInt(val,10);
+}
+
+// 点数を合計
 function getHu(){
+    alert("副底が20");
+    totalHu += agariTotal;
+    alert(`上がりは${agariTotal}`);
     totalHu += getKotsu();
+    alert(` 刻子は${getKotsu()}`);
     totalHu += getKantsu();
+    alert(`槓子は${getKantsu()}`);
+    totalHu += atamaTotal;
+    alert(`頭は${atamaTotal}`);
+    totalHu += matiTotal;
+    alert(`待ちの形は${matiTotal}`);
     alert(`合計は${totalHu}`);
+
+    totalHu = Math.ceil(totalHu/10)*10;
+    alert(`${totalHu}符`);
+
+    //色々リセット
+    agariTotal = 0;
+    atamaTotal = 0;
+    matiTotal = 0;
+    totalHu = 20;
 }

@@ -31,6 +31,7 @@
                 <form name="agari_form">
                     <input type="radio" name="agari" value="10" onchange="getAgari(this.value);">面前ロン<span>+10符</span></br>
                     <input type="radio" name="agari" value="2" onchange="getAgari(this.value);">自摸<span>+2符</span></br>
+                    <input type="radio" name="agari" value="0" onchange="getAgari(this.value);">どちらでもない<span>0符</span></br>
                 </form>
             </div>
             <div class="hu mentsu">
@@ -63,44 +64,44 @@
             </div>
             <div class="hu atama">
                 <p>雀頭（アタマ）の牌が</p>
-                <form name="atama-form">
+                <form name="atama_form">
                     <label>
-                        <input type="radio" name="atama" value="2">三元牌
+                        <input type="radio" name="atama" value="2" onchange="getAtama(this.value);">三元牌
                     </label>
                     <label>
-                        <input type="radio" name="atama" value="2">自風
+                        <input type="radio" name="atama" value="2" onchange="getAtama(this.value);">自風
                     </label>
                     <label>
-                        <input type="radio" name="atama" value="2">場風
+                        <input type="radio" name="atama" value="2" onchange="getAtama(this.value);">場風
                     </label>
                     <label>
-                        <input type="radio" name="atama" value="4">連風牌
+                        <input type="radio" name="atama" value="4" onchange="getAtama(this.value);">連風牌
                     </label>
                     <label>
-                        <input type="radio" name="atama" value="0">どれでもない
+                        <input type="radio" name="atama" value="0" onchange="getAtama(this.value);">どれでもない
                     </label>
             </form>
             </div>
             <div class="hu mati">
                 <p>待ちの形が</p>
-                <form name="mati-form">
+                <form name="mati_form">
                     <label>
-                        <input type="radio" name="mati" value="0">両面待ち
+                        <input type="radio" name="mati" value="0" onchange="getMati(this.value);">両面待ち
                     </label></br>
                     <label>
-                        <input type="radio" name="mati" value="0">シャボ待ち
+                        <input type="radio" name="mati" value="0" onchange="getMati(this.value);">シャボ待ち
                     </label></br>
                     <label>
-                        <input type="radio" name="mati" value="2">辺張待ち
+                        <input type="radio" name="mati" value="2" onchange="getMati(this.value);">辺張待ち
                     </label></br>
                     <label>
-                        <input type="radio" name="mati" value="2">嵌張待ち
+                        <input type="radio" name="mati" value="2" onchange="getMati(this.value);">嵌張待ち
                     </label></br>
                     <label>
-                        <input type="radio" name="mati" value="2">単騎待ち
+                        <input type="radio" name="mati" value="2" onchange="getMati(this.value);">単騎待ち
                     </label></br>
                     <label>
-                        <input type="radio" name="mati" value="2">ノベタン待ち
+                        <input type="radio" name="mati" value="2" onchange="getMati(this.value);">ノベタン待ち
                     </label></br>
                 </form>              
             </div>
