@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>麻雀計算機-親がロン</title>
+</head>
+<body>
+    <header></header>
+    <div class="wrapper">
+        <div class="container hand">
+            <form name="hand_form">
+                <p>１飜役</p>
+                <input type="checkbox" name="hand" value="1">面前自摸</br>
+                <input type="checkbox" name="hand" value="1">断么</br>
+                <input type="checkbox" name="hand" value="1">平和</br>
+                <input type="checkbox" name="hand" value="1">リーチ</br>
+                <p>２飜役</p>
+                <input type="checkbox" name="hand" value="2">三色同順</br>
+                <input type="checkbox" name="hand" value="2">チャンタ</br>
+                <input type="checkbox" name="hand" value="2">三暗刻</br>
+            </form>
+        </div>
+        <div class="container">
+            <div class="hu hu-tei">
+                <p>副底<span>+20符</span></p>
+            </div>
+            <div class="hu agari">
+                <form name="agari_form">
+                    <input type="radio" name="agari" value="10" onchange="getAgari(this.value);">面前ロン<span>+10符</span></br>
+                    <input type="radio" name="agari" value="2" onchange="getAgari(this.value);">自摸<span>+2符</span></br>
+                    <input type="radio" name="agari" value="0" onchange="getAgari(this.value);">どちらでもない<span>0符</span></br>
+                </form>
+            </div>
+            <div class="hu mentsu">
+                <p>刻子（同じ牌３つの面子）がある</p>
+                <button>ある</button><button>ない</button>
+                <p>あると答えた場合</p>
+                <form name="kotsu">
+                <p>明刻（鳴いて揃えた刻子）</p>
+                    <label>中張牌<input type="number" min="0" max="5" name="minko_common" value="0">個</label>
+                    <label>么九牌<input type="number" min="0" max="5" name="minko_rare" value="0">個</label>
+                    <p>暗刻（鳴かずに揃えた刻子）</p>
+                    <label>中張牌<input type="number" min="0" max="5" name="anko_common" value="0">個</label>
+                    <label>么九牌<input type="number" min="0" max="5" name="anko_rare" value="0">個</label>
+                </form>
+            </div>
+            <div class="hu kantsu">
+                <p>槓子（同じ牌４つの面子）がある</p>
+                <button>ある</button><button>ない</button>
+                <p>あると答えた場合</p>
+                <form name="kantsu">
+                    <p>明槓（鳴いて揃えた槓子）</p>
+                        <label>中張牌<input type="number" min="0" max="5" name="minkan_common" value="0">個</label>
+                        <label>么九牌<input type="number" min="0" max="5" name="minkan_rare" value="0">個</label>
+                        <p>暗槓（鳴かずに揃えた槓子）</p>
+                        <label>中張牌<input type="number" min="0" max="5" name="ankan_common" value="0">個</label>
+                        <label>么九牌<input type="number" min="0" max="5" name="ankan_rare" value="0">個</label>
+                    </form>    
+            </div>
+            <div class="hu atama">
+                <p>雀頭（アタマ）の牌が</p>
+                <form name="atama_form">
+                    <label>
+                        <input type="radio" name="atama" value="2" onchange="getAtama(this.value);">三元牌
+                    </label>
+                    <label>
+                        <input type="radio" name="atama" value="2" onchange="getAtama(this.value);">自風
+                    </label>
+                    <label>
+                        <input type="radio" name="atama" value="2" onchange="getAtama(this.value);">場風
+                    </label>
+                    <label>
+                        <input type="radio" name="atama" value="4" onchange="getAtama(this.value);">連風牌
+                    </label>
+                    <label>
+                        <input type="radio" name="atama" value="0" onchange="getAtama(this.value);">どれでもない
+                    </label>
+            </form>
+            </div>
+            <div class="hu mati">
+                <p>待ちの形が</p>
+                <form name="mati_form">
+                    <label>
+                        <input type="radio" name="mati" value="0" onchange="getMati(this.value);">両面待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="0" onchange="getMati(this.value);">シャボ待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="2" onchange="getMati(this.value);">辺張待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="2" onchange="getMati(this.value);">嵌張待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="2" onchange="getMati(this.value);">単騎待ち
+                    </label></br>
+                    <label>
+                        <input type="radio" name="mati" value="2" onchange="getMati(this.value);">ノベタン待ち
+                    </label></br>
+                </form>              
+            </div>
+        </div>
+    </div>
+            <div class="container total">
+                トータル
+                <p><span id="hu"></span>符<span id="hand"></span>飜</p>
+                <p><span id="result"></span>点</p>
+                <p><span id="payment_non_dealer"></span>放銃者の支払い</p>
+                <button onclick="clickResult();">合計点を計算</button>
+                <button onclick="Alert();">点数の内訳</button>
+            </div>
+
+    <footer></footer>
+    <script src="js/basic.js"></script>
+    <script src="js/dealer-ron.js"></script>
+</body>
+</html>

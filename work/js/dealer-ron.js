@@ -8,7 +8,8 @@ function paymentNonDealer(){
 // もらえる合計点を計算して表示
 function winPoint(){
     let win_point = 0;
-    win_point = paymentNonDealer();
+    win_point = basicPoint()*6;
+    win_point = Math.ceil(win_point/100)*100;
     result.innerHTML=`${win_point}`;
 }
 // 計算ボタン
