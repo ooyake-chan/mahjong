@@ -5,15 +5,14 @@ payment_non_dealer=document.getElementById('payment_non_dealer');
 payment_dealer=document.getElementById('payment_dealer');
 
 // 飜を取得して表示
+let totalHan = 0;
 function getHan(){
     const handCheck = document.hand_form.hand;
-    let totalHan = 0;
     for(i = 0 ; i<handCheck.length; i++){
         if(handCheck[i].checked){
             totalHan += parseInt(handCheck[i].value,10);
         }
     }
-    console.log(totalHan);
     hand.innerHTML=`${totalHan}`;
 }
 //符の計算
@@ -104,12 +103,32 @@ function getHu(){
     alert(`待ちの形は${matiTotal}`);
     alert(`合計は${totalHu}`);
 
+    // 表示させる
     totalHu = Math.ceil(totalHu/10)*10;
     alert(`${totalHu}符`);
+    hu.innerHTML=`${totalHu}`;
+}
+
+function clickResult(){
+    getHan();
+    if(totalHan == 0){
+        alert("役がないと上がれません！");
+        return null;
+    }
+    getHu();
+
+    // 基本点
+    n = totalHan + 2;
+    n = 2**n;
+    let basicPoint = 0;
+    basicPoint = totalHu*n;
+    alert(`基本点は${basicPoint}`);
 
     //色々リセット
+    totalHan = 0;
     agariTotal = 0;
     atamaTotal = 0;
     matiTotal = 0;
+    basicPoint = 0;
     totalHu = 20;
 }

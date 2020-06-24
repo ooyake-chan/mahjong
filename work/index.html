@@ -20,7 +20,6 @@
                 <input type="checkbox" name="hand" value="2">三色同順</br>
                 <input type="checkbox" name="hand" value="2">チャンタ</br>
                 <input type="checkbox" name="hand" value="2">三暗刻</br>
-                <input type="button" value="click" onclick="getHan();">
             </form>
         </div>
         <div class="container">
@@ -45,7 +44,6 @@
                     <p>暗刻（鳴かずに揃えた刻子）</p>
                     <label>中張牌<input type="number" min="0" max="5" name="anko_common" value="0">個</label>
                     <label>么九牌<input type="number" min="0" max="5" name="anko_rare" value="0">個</label>
-                    <input type="button" onclick="getKotsu();" value="get刻子">
                 </form>
             </div>
             <div class="hu kantsu">
@@ -59,7 +57,6 @@
                         <p>暗槓（鳴かずに揃えた槓子）</p>
                         <label>中張牌<input type="number" min="0" max="5" name="ankan_common" value="0">個</label>
                         <label>么九牌<input type="number" min="0" max="5" name="ankan_rare" value="0">個</label>
-                        <input type="button" onclick="getKantsu();" value="get槓子">
                     </form>    
             </div>
             <div class="hu atama">
@@ -113,7 +110,7 @@
                 <p><span id="result"></span>点</p>
                 <p><span id="payment_non_dealer"></span>子の支払い</p>
                 <p><span id="payment_dealer"></span>親の支払い</p>
-                <button onclick="getHu();">符を計算</button>
+                <button onclick="clickResult();">合計点を計算</button>
             </div>
 
     <footer></footer>
