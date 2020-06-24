@@ -51,7 +51,8 @@
 .total {
   position: fixed;
   top: 100px;
-  right: 100px;
+  right: 15px;
+  width: 300px;
   padding: 15px;
   border-radius: 3px;
   background-color: #90ee90;
