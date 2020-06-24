@@ -29,59 +29,37 @@
             </div>
             <div class="hu agari">
                 <form name="agari_form">
-                    <input type="radio" name="agari" value="10">面前ロン<span>+10符</span></br>
-                    <input type="radio" name="agari" value="2">自摸<span>+2符</span></br>
+                    <input type="radio" name="agari" value="10" onchange="getAgari(this.value);">面前ロン<span>+10符</span></br>
+                    <input type="radio" name="agari" value="2" onchange="getAgari(this.value);">自摸<span>+2符</span></br>
                 </form>
             </div>
             <div class="hu mentsu">
                 <p>刻子（同じ牌３つの面子）がある</p>
                 <button>ある</button><button>ない</button>
                 <p>あると答えた場合</p>
+                <form name="kotsu">
                 <p>明刻（鳴いて揃えた刻子）</p>
-                <p>中張牌<input type="text" name="minko_common">個</p>
-                <p>么九牌<input type="text" name="minko_rare">個</p>
-                <p>暗刻（鳴かずに揃えた刻子）</p>
-                <p>中張牌<input type="text" name="anko_common">個</p>
-                <p>么九牌<input type="text" name="anko_rare">個</p>
+                    <label>中張牌<input type="number" min="0" max="5" name="minko_common" value="0">個</label>
+                    <label>么九牌<input type="number" min="0" max="5" name="minko_rare" value="0">個</label>
+                    <p>暗刻（鳴かずに揃えた刻子）</p>
+                    <label>中張牌<input type="number" min="0" max="5" name="anko_common" value="0">個</label>
+                    <label>么九牌<input type="number" min="0" max="5" name="anko_rare" value="0">個</label>
+                    <input type="button" onclick="getKotsu();" value="get刻子">
+                </form>
             </div>
             <div class="hu kantsu">
                 <p>槓子（同じ牌４つの面子）がある</p>
                 <button>ある</button><button>ない</button>
                 <p>あると答えた場合</p>
-                <p>明槓（鳴いて揃えた槓子）</p>
-                <label>中張牌
-                    <select name="kantsu_chunchan" id="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </label>
-                <label>么九牌
-                    <select name="kantsu_yaochu" id="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </label>    
-                    <p>暗槓（鳴かずに揃えた槓子）</p>
-                    <label>中張牌
-                        <select name="ankan_chunchan" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </label>
-                    <label>么九牌
-                        <select name="ankan_yaochu" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </label>    
+                <form name="kantsu">
+                    <p>明槓（鳴いて揃えた槓子）</p>
+                        <label>中張牌<input type="number" min="0" max="5" name="minkan_common" value="0">個</label>
+                        <label>么九牌<input type="number" min="0" max="5" name="minkan_rare" value="0">個</label>
+                        <p>暗槓（鳴かずに揃えた槓子）</p>
+                        <label>中張牌<input type="number" min="0" max="5" name="ankan_common" value="0">個</label>
+                        <label>么九牌<input type="number" min="0" max="5" name="ankan_rare" value="0">個</label>
+                        <input type="button" onclick="getKantsu();" value="get槓子">
+                    </form>    
             </div>
             <div class="hu atama">
                 <p>雀頭（アタマ）の牌が</p>
