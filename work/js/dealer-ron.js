@@ -1,7 +1,23 @@
 let payment =0;
 let win_point = 0;
 
-//満貫以上
+//七対子チェック
+function CheckSevenToitsu(){
+    seven_toitsu = document.getElementById("seven_toitsu");
+    if(seven_toitsu.checked){
+        totalHan = 2;
+        totalHu = 25;
+        win_point = "七対子"
+        payment = 2400;
+
+        hand.innerHTML=`${totalHan}`;
+        hu.innerHTML=`${totalHu}`;
+        result.innerHTML=`${win_point}`;
+        payment_non_dealer.innerHTML=`${payment}`;
+    }
+}
+
+//満貫チェック
 function CheckOverPoint(Han,Hu){
     if(Han >= 13){
         win_point = "役満";
@@ -60,10 +76,12 @@ function clickResult(){
         return null;
     }
     getHu();
+
     paymentNonDealer();
     winPoint();
 
     CheckOverPoint(totalHan,totalHu);
+    CheckSevenToitsu();
 
     reset();
 }
